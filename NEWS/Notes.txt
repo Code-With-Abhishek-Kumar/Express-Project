@@ -1,0 +1,37 @@
+ const newsApi = await axios.get('https://newsapi.org/v2/everything?q=tesla&from=2023-12-25&sortBy=publishedAt&apiKey=51b3563d72ba452abcf704e8479c9748');
+    const Response = newsApi.data.articles;
+    // res.send(Response)
+    // console.log(Response)
+    res.render('index',{articles:Response})
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+
+
+3 Way to loop Data in ejs
+
+
+//1) You can use For each 
+<% articles.forEach(function(article) { %>
+    <%- article.title %>
+<% }); %>
+
+
+
+//2) You can also use loop
+
+<% for (let i = 0; i < articles.length; i++) { %>
+    <%- articles[i].title %>
+<% }
+
+//3) You can also use Map
+
+
+<% articles.map(function(article) { %>
+    <%- article.title %>
+<% }); %>
+
+
+

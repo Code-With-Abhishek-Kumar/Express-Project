@@ -1,0 +1,55 @@
+<%- include('./Partials/header' , {title: "News Website" }) %>
+
+  <nav>
+
+
+  <div id="nav-left">
+    <h2>News App </h2>
+    <h3>Using Nodejs </h3>
+  </div>
+  <div id="nav-right">
+    <input type="search" placeholder="Search News" id="searchInput"  value="<%-searchQuery %>" >
+    <button id="searchButton">Search</button>
+  </div>
+
+
+  </nav>
+<br>
+  <div id="cursor"></div>
+  <main>
+
+    <div class="wrapper">
+      <div class="news">
+        <% articles.map(function(article,index) { %>
+          <a href="<%-article.url %>">
+            <div class="news__cart">
+
+
+
+
+              <div class="second-layer">
+                <img src="<%-article.urlToImage %>" alt="" srcset="">
+                <p><%- article.description %></p>
+
+              </div>
+
+              <div class="first-layer">
+                <h1> <%- article.title %></h1>
+              </div>
+            </div>
+          </a>
+
+
+
+
+
+          <% }); %>
+      </div>
+
+
+
+    </div>
+
+  </main>
+
+  <%- include('./Partials/footer') %>
