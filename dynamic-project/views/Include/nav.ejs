@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="navbar-container container">
+      <input type="checkbox" name="" id="">
+      <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+      </div>
+      <ul class="menu-items">
+          <!-- <li><a href="#">Home</a></li>    -->
+        
+
+          <% Details.links.forEach(element => { %>
+            <li><a href="<%- element.url %>"><%- element.label %></a></li>  
+          <% }) %>
+          
+      </ul>
+      <h2 class="logo"> <%- Details.brandName %> </h2>
+  </div>
+</nav>

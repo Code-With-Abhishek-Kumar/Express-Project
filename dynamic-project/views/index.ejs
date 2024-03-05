@@ -1,0 +1,72 @@
+<%- include('Include/header.ejs') %>
+
+<div id="page_loader">
+  <div class="spinner">
+    <div class="react1"></div>
+    <div class="react2"></div>
+    <div class="react3"></div>
+    <div class="react4"></div>
+    <div class="react5"></div>
+  </div>
+</div>
+
+<div id="page1">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- <div class="swiper-slide">Slide 1</div> -->
+      <% Details.sliderLink.forEach(element => { %>
+      <div class="swiper-slide">
+        <img src="<%- element.url %>" alt="" srcset="" />
+      </div>
+      <% }) %>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+</div>
+
+<div id="page2">
+  <section class="service-grid pb-5 pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 text-center mb-4">
+          <div class="service-title">
+            <h4>Our Services</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <% Details.Service.forEach(element => { %>
+
+        <div class="col-lg-4 col-md-6 text-center mb-3">
+          <div class="service-wrap">
+            <div class="service-icon">
+              <i class="<%- element.service_icon%>"></i>
+              <p></p>
+            </div>
+            <h4><%- element.service_Title%></h4>
+            <p><%- element.service_Paragraph%></p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <% }) %>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%- include('Include/footer.ejs') %>
