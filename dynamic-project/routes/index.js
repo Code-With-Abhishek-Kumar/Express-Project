@@ -125,16 +125,16 @@ router.post('/submit-form', async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const query = req.body.query;
-  console.log(AllformData)
+  console.log(query)
   // Save Data  in db 
   try {
     const data = await Contact.create(req.body)
     console.log(data)
-    res.redirect('/')
+    res.redirect('/') 
     
   } catch (error) {
     console.log(error)
-    // res.redirect('/')
+    res.redirect('/')
     
   }
   

@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Contact = mongoose.Schema({
     name: String,
     email: String,
-    query:String,
+    query: String,
 
 
 })
